@@ -16,7 +16,6 @@ use Cgoit\CmaceBundle\Controller\FixedTimeRangeContentAndModuleTrait;
 use Contao\Config;
 use Contao\FrontendTemplate;
 use Contao\ModuleEventlist;
-use Contao\PageModel;
 use Contao\StringUtil;
 use Contao\System;
 
