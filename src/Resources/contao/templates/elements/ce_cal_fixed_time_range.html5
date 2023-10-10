@@ -1,0 +1,17 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?= $this->text ?>
+
+<?php if (!empty($this->entries)): ?>
+    <?php if ($this->entriesHeadline): ?>
+        <<?= $this->entriesHl ?>><?= $this->entriesHeadline ?></<?= $this->entriesHl ?>>
+    <?php endif; ?>
+
+    <?php foreach ($this->entries as $entry): ?>
+        <?php $this->insert('events_upcoming', $entry->arrData); ?>
+    <?php endforeach; ?>
+<?php endif; ?>
+
+<?php $this->endblock(); ?>
