@@ -12,88 +12,42 @@ declare(strict_types=1);
 
 namespace Cgoit\CmaceBundle\Controller;
 
-use Contao\CalendarEventsModel;
-use Contao\ContentModel;
 use Contao\Date;
-use Contao\ModuleModel;
 use Contao\StringUtil;
-use Contao\System;
-use Contao\Template;
 
 trait FixedTimeRangeContentAndModuleTrait
 {
-    protected function addEvents(Template $template, ContentModel|ModuleModel $model): void
+    protected function compile(): void
     {
-        if (!empty($model->headline)) {
-            $arrHeadline = StringUtil::deserialize($model->headline, true);
-            $template->hl = $arrHeadline['unit'];
-            $template->headline = $arrHeadline['value'];
+        $headline = $this->headline;
+
+        parent::compile();
+
+        $this->Template->headline = $headline ?: '';
+
+        if (!empty($this->customTpl)) {
+            $this->strTemplate = $this->customTpl;
         }
 
-        $template->text = $model->text;
+        $this->Template->text = $this->cmaceText ?: '';
 
-        if (!empty($model->cmaceEventsHeadline)) {
-            $arrEventsHeadline = StringUtil::deserialize($model->cmaceEventsHeadline, true);
-            $template->entriesHl = $arrEventsHeadline['unit'];
-            $template->entriesHeadline = $arrEventsHeadline['value'];
+        if (!empty($this->cmaceEventsHeadline)) {
+            $arrEventsHeadline = StringUtil::deserialize($this->cmaceEventsHeadline, true);
+            $this->Template->entriesHl = $arrEventsHeadline['unit'];
+            $this->Template->entriesHeadline = $arrEventsHeadline['value'];
         }
+    }
 
-        $arrEntries = [];
+    /**
+     * @param string $strFormat
+     *
+     * @return array<mixed>
+     */
+    protected function getDatesFromFormat(Date $objDate, $strFormat): array
+    {
+        $intStart = $this->cmaceEventsFrom;
+        $intEnd = \DateTime::createFromFormat('Y-m-d H:i:s', (new \DateTime())->setTimestamp($this->cmaceEventsUntil)->format('Y-m-d 23:59:59'))->getTimestamp();
 
-        $arrFields = [];
-        $arrValues = [];
-
-        if (!empty($model->cmaceEvents)) {
-            $arrFields[] = 'id IN ('.implode(',', StringUtil::deserialize($model->cmaceEvents, true)).')';
-        }
-
-        if (!empty($model->cmaceEventsFrom)) {
-            $arrFields[] = 'startDate>=?';
-            $arrValues[] = $model->cmaceEventsFrom;
-        }
-
-        if (!empty($model->cmaceEventsUntil)) {
-            $arrFields[] = 'startDate<=?';
-            $arrValues[] = $model->cmaceEventsUntil;
-        }
-
-        if (!empty($model->cmaceCalendars)) {
-            $arrFields[] = 'pid IN ('.implode(',', StringUtil::deserialize($model->cmaceCalendars, true)).')';
-        }
-
-        if (!empty($arrFields)) {
-            $arrEvents = CalendarEventsModel::findBy(
-                $arrFields,
-                $arrValues,
-                ['order' => 'startDate ASC']
-            );
-
-            if (null !== $arrEvents) {
-                foreach ($arrEvents as $objEvent) {
-                    $dateStr = Date::parse('l, d.m.Y', $objEvent->startDate);
-
-                    if (!isset($arrEntries[$dateStr])) {
-                        $arrEntries[$dateStr] = [];
-                    }
-
-                    $entry = $objEvent;
-
-                    if (
-                        !empty($GLOBALS['TL_HOOKS']['getFixedRangeEventsEntryHook'])
-                        && \is_array($GLOBALS['TL_HOOKS']['getFixedRangeEventsEntryHook'])
-                    ) {
-                        foreach ($GLOBALS['TL_HOOKS']['getFixedRangeEventsEntryHook'] as $callback) {
-                            $entry = System::importStatic($callback[0])->{$callback[1]}();
-                        }
-                    }
-
-                    if ($entry) {
-                        $arrEntries[$dateStr][] = $entry;
-                    }
-                }
-            }
-        }
-
-        $template->entries = $arrEntries;
+        return [$intStart, $intEnd, $GLOBALS['TL_LANG']['MSC']['cal_empty']];
     }
 }

@@ -10,15 +10,22 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-use Cgoit\CmaceBundle\Controller\Module\FixedTimeRangeModule;
 use Contao\Backend;
 use Contao\BackendUser;
 use Contao\CalendarBundle\Security\ContaoCalendarPermissions;
 use Contao\System;
 
-$GLOBALS['TL_DCA']['tl_module']['palettes'][FixedTimeRangeModule::TYPE] = '{title_legend},name,headline,type;{cmace_legend},text,cmaceEventsHeadline,cmaceCalendars,cmaceEventsFrom,cmaceEventsUntil,cmaceEvents;{template_legend:hide},customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['eventlist_fixed_range'] = '{title_legend},name,headline,type;{config_legend},cmaceText,cal_calendar,cal_noSpan,cal_featured,cal_order,cal_readerModule,cal_limit,perPage,cal_hideRunning,cmaceEventsHeadline,cmaceEventsFrom,cmaceEventsUntil;{template_legend:hide},cal_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
 $GLOBALS['TL_DCA']['tl_module']['fields'] = array_merge(
+    ['cmaceText' => [
+        'exclude' => true,
+        'search' => true,
+        'inputType' => 'textarea',
+        'eval' => ['mandatory' => false, 'rte' => 'tinyMCE', 'tl_class' => 'w100'],
+        'explanation' => 'insertTags',
+        'sql' => 'mediumtext NULL',
+    ]],
     ['cmaceEventsHeadline' => [
         'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceEventsHeadline'],
         'exclude' => true,
@@ -28,21 +35,12 @@ $GLOBALS['TL_DCA']['tl_module']['fields'] = array_merge(
         'eval' => ['maxlength' => 200, 'tl_class' => 'w50 clr'],
         'sql' => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
     ]],
-    ['cmaceCalendars' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceCalendars'],
-        'exclude' => true,
-        'search' => true,
-        'inputType' => 'checkbox',
-        'options_callback' => ['tl_module_cmace', 'getCalendars'],
-        'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'clr w50'],
-        'sql' => 'blob NULL',
-    ]],
     ['cmaceEventsFrom' => [
         'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceEventsFrom'],
         'exclude' => true,
         'search' => true,
         'inputType' => 'text',
-        'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'clr w50'],
+        'eval' => ['mandatory' => true, 'rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'clr w50'],
         'sql' => 'bigint(20) NULL',
     ]],
     ['cmaceEventsUntil' => [
@@ -50,17 +48,8 @@ $GLOBALS['TL_DCA']['tl_module']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'text',
-        'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'w50'],
+        'eval' => ['mandatory' => true, 'rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'w50'],
         'sql' => 'bigint(20) NULL',
-    ]],
-    ['cmaceEvents' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceEvents'],
-        'exclude' => true,
-        'search' => true,
-        'inputType' => 'picker',
-        'relation' => ['type' => 'hasMany', 'load' => 'lazy', 'table' => 'tl_calendar_events'],
-        'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'clr w50'],
-        'sql' => 'blob NULL',
     ]],
     $GLOBALS['TL_DCA']['tl_module']['fields']
 );

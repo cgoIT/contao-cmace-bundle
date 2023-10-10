@@ -1,0 +1,14 @@
+<?php $this->extend('block_searchable'); ?>
+
+<?php $this->block('content'); ?>
+
+<?= $this->text ?>
+
+<?php if ($this->entriesHeadline && $this->eventCount): ?>
+    <<?= $this->entriesHl ?>><?= $this->entriesHeadline ?></<?= $this->entriesHl ?>>
+<?php endif; ?>
+
+<?= $this->events ?>
+<?= $this->pagination ?>
+
+<?php $this->endblock(); ?>
