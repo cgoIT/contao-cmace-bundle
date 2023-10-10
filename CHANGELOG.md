@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.0...v1.0.1) (2023-10-10)
+
+
+### Bug Fixes
+
+* fix content element ([438256d](https://github.com/cgoIT/contao-cmace-bundle/commit/438256d7fd0308a146cb0456b6279f47bcc9241e))
+
 ## 1.0.0 (2023-10-10)
 
 
