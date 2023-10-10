@@ -28,7 +28,7 @@ use Contao\System;
  * @property int         $cal_readerModule
  * @property bool        $cal_hideRunning
  * @property string      $cal_featured
- * @property string|null $cmaceText
+ * @property string|null $text
  * @property string|null $cmaceEventsHeadline
  * @property int         $cmaceEventsFrom
  * @property int         $cmaceEventsUntil
@@ -38,11 +38,11 @@ class CEEventlistFixedRange extends ModuleEventlist
 {
     use FixedTimeRangeContentAndModuleTrait;
 
-    protected string $strDefaultTemplate = 'mod_eventlist_fixedrange';
+    protected $strTemplate = 'ce_eventlist_fixedrange';
 
     public function generate(): string
     {
-        $this->strTemplate = $this->customTpl ?: $this->strDefaultTemplate;
+        $this->strTemplate = $this->customTpl ?: $this->strTemplate;
 
         if ($this->invisible) {
             return '';

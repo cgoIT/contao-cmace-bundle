@@ -12,6 +12,7 @@ declare(strict_types=1);
 
 namespace Cgoit\CmaceBundle\Controller;
 
+use Cgoit\CmaceBundle\Controller\Module\ModuleEventlistFixedRange;
 use Contao\Date;
 use Contao\StringUtil;
 
@@ -29,7 +30,11 @@ trait FixedTimeRangeContentAndModuleTrait
             $this->strTemplate = $this->customTpl;
         }
 
-        $this->Template->text = $this->cmaceText ?: '';
+        if ($this instanceof ModuleEventlistFixedRange) {
+            $this->Template->text = $this->cmaceText ?: '';
+        } else {
+            $this->Template->text = $this->text ?: '';
+        }
 
         if (!empty($this->cmaceEventsHeadline)) {
             $arrEventsHeadline = StringUtil::deserialize($this->cmaceEventsHeadline, true);

@@ -25,11 +25,11 @@ class ModuleEventlistFixedRange extends ModuleEventlist
 {
     use FixedTimeRangeContentAndModuleTrait;
 
-    protected string $strDefaultTemplate = 'mod_eventlist_fixedrange';
+    protected $strTemplate = 'mod_eventlist_fixedrange';
 
     public function generate(): string
     {
-        $this->strTemplate = $this->customTpl ?: $this->strDefaultTemplate;
+        $this->strTemplate = $this->customTpl ?: $this->strTemplate;
 
         return parent::generate();
     }
