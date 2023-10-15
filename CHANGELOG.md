@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.1...v1.0.2) (2023-10-15)
+
+
+### Bug Fixes
+
+* bundle and extension should be prefixed with "cgoit" instead of "contao" ([82e82ea](https://github.com/cgoIT/contao-cmace-bundle/commit/82e82eaab82b30efaa6395393e197fdae7881e7f))
+
 ## [1.0.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.0...v1.0.1) (2023-10-10)
 
 
