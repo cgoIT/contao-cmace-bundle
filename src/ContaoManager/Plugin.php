@@ -12,7 +12,7 @@ declare(strict_types=1);
 
 namespace Cgoit\CmaceBundle\ContaoManager;
 
-use Cgoit\CmaceBundle\ContaoCmaceBundle;
+use Cgoit\CmaceBundle\CgoitCmaceBundle;
 use Contao\CalendarBundle\ContaoCalendarBundle;
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -24,7 +24,7 @@ class Plugin implements BundlePluginInterface
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(ContaoCmaceBundle::class)
+            BundleConfig::create(CgoitCmaceBundle::class)
                 ->setLoadAfter([
                     ContaoCoreBundle::class,
                     ContaoCalendarBundle::class,

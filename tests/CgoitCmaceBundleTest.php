@@ -12,15 +12,15 @@ declare(strict_types=1);
 
 namespace Cgoit\CmaceBundle\Tests;
 
-use Cgoit\CmaceBundle\ContaoCmaceBundle;
+use Cgoit\CmaceBundle\CgoitCmaceBundle;
 use PHPUnit\Framework\TestCase;
 
-class ContaoCmaceBundleTest extends TestCase
+class CgoitCmaceBundleTest extends TestCase
 {
     public function testCanBeInstantiated(): void
     {
-        $bundle = new ContaoCmaceBundle();
+        $bundle = new CgoitCmaceBundle();
 
-        $this->assertInstanceOf('Cgoit\CmaceBundle\ContaoCmaceBundle', $bundle);
+        $this->assertInstanceOf('Cgoit\CmaceBundle\CgoitCmaceBundle', $bundle);
     }
 }

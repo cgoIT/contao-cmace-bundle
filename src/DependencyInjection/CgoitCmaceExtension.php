@@ -15,7 +15,7 @@ namespace Cgoit\CmaceBundle\DependencyInjection;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 
-class ContaoCmaceExtension extends Extension
+class CgoitCmaceExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {

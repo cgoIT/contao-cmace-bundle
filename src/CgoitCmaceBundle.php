@@ -14,6 +14,6 @@ namespace Cgoit\CmaceBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class ContaoCmaceBundle extends Bundle
+class CgoitCmaceBundle extends Bundle
 {
 }
