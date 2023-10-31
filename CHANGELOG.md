@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.2...v1.1.0) (2023-10-31)
+
+
+### Features
+
+* add option to link a news entry to an event ([22cf92b](https://github.com/cgoIT/contao-cmace-bundle/commit/22cf92b16eed04f410a85315333b7317424f8017))
+
+
+### Bug Fixes
+
+* fix ecs issues ([a0f65d7](https://github.com/cgoIT/contao-cmace-bundle/commit/a0f65d7a24e0801f72207bdf4412680ab92290bb))
+
 ## [1.0.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.1...v1.0.2) (2023-10-15)
 
 
