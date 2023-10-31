@@ -3,7 +3,7 @@
 declare(strict_types=1);
 
 /*
- * This file is part of cgoit\contao-bfv-widget-bundle.
+ * This file is part of cgoit\contao-cmace-bundle.
  *
  * (c) Carsten Götzinger
  *
