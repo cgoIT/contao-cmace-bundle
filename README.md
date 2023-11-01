@@ -1,5 +1,9 @@
 # Contao 4 Calendar Modules and Content Elements (CMACE) Bundle
 
+[![](https://img.shields.io/packagist/v/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
+[![](https://img.shields.io/packagist/dt/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
+[![CI](https://github.com/cgoIT/contao-cmace-bundle/actions/workflows/ci.yml/badge.svg)](https://github.com/cgoIT/contao-cmace-bundle/actions/workflows/ci.yml)
+
 This bundle adds some new modules and content elements to display calendar events in the frontend.
 
 Currently there are the following modules and content elements:
