@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.1.0...v1.2.0) (2023-11-06)
+
+
+### Features
+
+* add english translation ([d81b4d0](https://github.com/cgoIT/contao-cmace-bundle/commit/d81b4d0c4bc2c62b23a16af02087c87cc89d8371))
+
 ## [1.1.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.0.2...v1.1.0) (2023-10-31)
 
 
