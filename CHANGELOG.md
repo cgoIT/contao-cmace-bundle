@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.0...v1.2.1) (2023-11-07)
+
+
+### Miscellaneous Chores
+
+* add funding links ([d388071](https://github.com/cgoIT/contao-cmace-bundle/commit/d388071754365a97913ef2e7505a89c236242a4c))
+* add issue and pr templates ([a6c8559](https://github.com/cgoIT/contao-cmace-bundle/commit/a6c855917543f5ff78871872d7bbec4c9ab0c279))
+
 ## [1.2.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.1.0...v1.2.0) (2023-11-06)
 
 
