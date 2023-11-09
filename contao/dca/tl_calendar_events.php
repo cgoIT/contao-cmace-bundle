@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of cgoit\contao-cmace-bundle.
+ * This file is part of cgoit\contao-cmace-bundle for Contao Open Source CMS.
  *
- * (c) Carsten Götzinger
- *
- * @license LGPL-3.0-or-later
+ * @copyright  Copyright (c) 2023, cgoIT
+ * @author     cgoIT <https://cgo-it.de>
+ * @license    LGPL-3.0-or-later
  */
 
 use Contao\CoreBundle\DataContainer\PaletteManipulator;
@@ -35,5 +35,5 @@ $GLOBALS['TL_DCA']['tl_calendar_events']['fields'] = array_merge(
         'eval' => ['mandatory' => false, 'tl_class' => 'clr w50'],
         'sql' => 'int(10) unsigned NOT NULL default 0',
     ]],
-    $GLOBALS['TL_DCA']['tl_calendar_events']['fields']
+    $GLOBALS['TL_DCA']['tl_calendar_events']['fields'],
 );

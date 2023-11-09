@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of cgoit\contao-cmace-bundle.
+ * This file is part of cgoit\contao-cmace-bundle for Contao Open Source CMS.
  *
- * (c) Carsten Götzinger
- *
- * @license LGPL-3.0-or-later
+ * @copyright  Copyright (c) 2023, cgoIT
+ * @author     cgoIT <https://cgo-it.de>
+ * @license    LGPL-3.0-or-later
  */
 
 use Contao\Backend;
@@ -33,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'checkbox',
-        'options_callback' => ['tl_content_cmace', 'getCalendars'],
+        'options_callback' => ['tl_content', 'getCalendars'],
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'w100'],
         'sql' => 'blob NULL',
     ]],
@@ -125,13 +125,13 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'clr w50'],
         'sql' => 'blob NULL',
     ]],
-    $GLOBALS['TL_DCA']['tl_content']['fields']
+    $GLOBALS['TL_DCA']['tl_content']['fields'],
 );
 
 /**
  * Provide miscellaneous methods that are used by the data configuration array.
  */
-class tl_content_cmace extends Backend
+class tl_content extends Backend
 {
     /**
      * Import the back end user object.
