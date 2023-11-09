@@ -83,7 +83,7 @@ class CEEventlistFixedRange extends ModuleEventlist
 
         // Show the event reader if an item has been selected
         if ($this->cal_readerModule > 0 && (isset($_GET['events']) || (Config::get('useAutoItem') && isset($_GET['auto_item'])))) {
-            return $this->getFrontendModule($this->cal_readerModule, $this->strColumn);
+            return static::getFrontendModule($this->cal_readerModule, $this->strColumn);
         }
 
         $this->Template = new FrontendTemplate($this->strTemplate);
@@ -103,7 +103,7 @@ class CEEventlistFixedRange extends ModuleEventlist
         }
 
         if (!$this->Template->hl) {
-            $this->Template->hl = $this->hl; // @phpstan-ignore-line
+            $this->Template->hl = $this->hl;
         }
 
         if (!empty($this->objModel->classes)) {

@@ -21,6 +21,6 @@ class CgoitCmaceBundleTest extends TestCase
     {
         $bundle = new CgoitCmaceBundle();
 
-        $this->assertInstanceOf('Cgoit\CmaceBundle\CgoitCmaceBundle', $bundle);
+        $this->assertInstanceOf(CgoitCmaceBundle::class, $bundle);
     }
 }
