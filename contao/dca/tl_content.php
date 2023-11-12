@@ -33,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'checkbox',
-        'options_callback' => ['tl_content', 'getCalendars'],
+        'options_callback' => ['tl_content_cmace', 'getCalendars'],
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'w100'],
         'sql' => 'blob NULL',
     ]],
@@ -131,7 +131,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
 /**
  * Provide miscellaneous methods that are used by the data configuration array.
  */
-class tl_content extends Backend
+class tl_content_cmace extends Backend
 {
     /**
      * Import the back end user object.
