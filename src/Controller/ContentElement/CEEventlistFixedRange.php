@@ -44,15 +44,21 @@ class CEEventlistFixedRange extends ModuleEventlist
     {
         $this->strTemplate = $this->customTpl ?: $this->strTemplate;
 
-        if ($this->invisible) {
+        /*if ($this->invisible) {
             return '';
-        }
+        }*/
 
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
 
         if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)) {
+            if ($this->invisible) {
+                return '';
+            }
+
             $this->Template = new FrontendTemplate($this->strTemplate);
             $this->Template->setData($this->arrData);
+
+            $this->compile();
 
             // Do not change this order (see #6191)
             $this->Template->style = !empty($this->arrStyle) ? implode(' ', $this->arrStyle) : '';
@@ -64,7 +70,7 @@ class CEEventlistFixedRange extends ModuleEventlist
             }
 
             if (!$this->Template->hl) {
-                $this->Template->hl = $this->hl; // @phpstan-ignore-line
+                $this->Template->hl = $this->hl;
             }
 
             if (!empty($this->objModel->classes)) {
