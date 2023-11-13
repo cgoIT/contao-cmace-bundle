@@ -32,6 +32,7 @@ use Contao\System;
  * @property string|null $cmaceEventsHeadline
  * @property int         $cmaceEventsFrom
  * @property int         $cmaceEventsUntil
+ * @property array       $hl
  * @property bool        $invisible
  */
 class CEEventlistFixedRange extends ModuleEventlist
@@ -44,17 +45,9 @@ class CEEventlistFixedRange extends ModuleEventlist
     {
         $this->strTemplate = $this->customTpl ?: $this->strTemplate;
 
-        /*if ($this->invisible) {
-            return '';
-        }*/
-
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
 
         if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)) {
-            if ($this->invisible) {
-                return '';
-            }
-
             $this->Template = new FrontendTemplate($this->strTemplate);
             $this->Template->setData($this->arrData);
 
@@ -78,6 +71,10 @@ class CEEventlistFixedRange extends ModuleEventlist
             }
 
             return $this->Template->parse();
+        }
+
+        if ($this->invisible) {
+            return '';
         }
 
         $this->cal_calendar = $this->sortOutProtected(StringUtil::deserialize($this->cal_calendar, true));
