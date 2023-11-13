@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of cgoit\contao-cmace-bundle.
+ * This file is part of cgoit\contao-cmace-bundle for Contao Open Source CMS.
  *
- * (c) Carsten Götzinger
- *
- * @license LGPL-3.0-or-later
+ * @copyright  Copyright (c) 2023, cgoIT
+ * @author     cgoIT <https://cgo-it.de>
+ * @license    LGPL-3.0-or-later
  */
 
 namespace Cgoit\CmaceBundle\Controller\ContentElement;
@@ -32,6 +32,7 @@ use Contao\System;
  * @property string|null $cmaceEventsHeadline
  * @property int         $cmaceEventsFrom
  * @property int         $cmaceEventsUntil
+ * @property array       $hl
  * @property bool        $invisible
  */
 class CEEventlistFixedRange extends ModuleEventlist
@@ -44,15 +45,13 @@ class CEEventlistFixedRange extends ModuleEventlist
     {
         $this->strTemplate = $this->customTpl ?: $this->strTemplate;
 
-        if ($this->invisible) {
-            return '';
-        }
-
         $request = System::getContainer()->get('request_stack')->getCurrentRequest();
 
         if ($request && System::getContainer()->get('contao.routing.scope_matcher')->isBackendRequest($request)) {
             $this->Template = new FrontendTemplate($this->strTemplate);
             $this->Template->setData($this->arrData);
+
+            $this->compile();
 
             // Do not change this order (see #6191)
             $this->Template->style = !empty($this->arrStyle) ? implode(' ', $this->arrStyle) : '';
@@ -64,7 +63,7 @@ class CEEventlistFixedRange extends ModuleEventlist
             }
 
             if (!$this->Template->hl) {
-                $this->Template->hl = $this->hl; // @phpstan-ignore-line
+                $this->Template->hl = $this->hl;
             }
 
             if (!empty($this->objModel->classes)) {
@@ -72,6 +71,10 @@ class CEEventlistFixedRange extends ModuleEventlist
             }
 
             return $this->Template->parse();
+        }
+
+        if ($this->invisible) {
+            return '';
         }
 
         $this->cal_calendar = $this->sortOutProtected(StringUtil::deserialize($this->cal_calendar, true));
@@ -83,7 +86,7 @@ class CEEventlistFixedRange extends ModuleEventlist
 
         // Show the event reader if an item has been selected
         if ($this->cal_readerModule > 0 && (isset($_GET['events']) || (Config::get('useAutoItem') && isset($_GET['auto_item'])))) {
-            return $this->getFrontendModule($this->cal_readerModule, $this->strColumn);
+            return static::getFrontendModule($this->cal_readerModule, $this->strColumn);
         }
 
         $this->Template = new FrontendTemplate($this->strTemplate);
@@ -103,7 +106,7 @@ class CEEventlistFixedRange extends ModuleEventlist
         }
 
         if (!$this->Template->hl) {
-            $this->Template->hl = $this->hl; // @phpstan-ignore-line
+            $this->Template->hl = $this->hl;
         }
 
         if (!empty($this->objModel->classes)) {
