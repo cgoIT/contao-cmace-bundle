@@ -10,11 +10,7 @@ declare(strict_types=1);
  * @license    LGPL-3.0-or-later
  */
 
-use Contao\Backend;
-use Contao\BackendUser;
-use Contao\CalendarBundle\Security\ContaoCalendarPermissions;
 use Contao\Controller;
-use Contao\System;
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['eventlist_fixed_range'] = '{type_legend},type,headline;{cmace_legend},text,cal_calendar,cal_noSpan,cal_featured,cal_order,cal_readerModule,cal_limit,perPage,cal_hideRunning,cmaceEventsHeadline,cmaceEventsFrom,cmaceEventsUntil;{template_legend:hide},cal_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
@@ -33,7 +29,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'checkbox',
-        'options_callback' => ['tl_content_cmace', 'getCalendars'],
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'w100'],
         'sql' => 'blob NULL',
     ]],
@@ -127,42 +122,3 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
     ]],
     $GLOBALS['TL_DCA']['tl_content']['fields'],
 );
-
-/**
- * Provide miscellaneous methods that are used by the data configuration array.
- */
-class tl_content_cmace extends Backend
-{
-    /**
-     * Import the back end user object.
-     */
-    public function __construct()
-    {
-        parent::__construct();
-        $this->import(BackendUser::class, 'User');
-    }
-
-    /**
-     * Get all calendars and return them as array.
-     *
-     * @return array
-     */
-    public function getCalendars()
-    {
-        if (!$this->User->isAdmin && !is_array($this->User->calendars)) {
-            return [];
-        }
-
-        $arrCalendars = [];
-        $objCalendars = $this->Database->execute('SELECT id, title FROM tl_calendar ORDER BY title');
-        $security = System::getContainer()->get('security.helper');
-
-        while ($objCalendars->next()) {
-            if ($security->isGranted(ContaoCalendarPermissions::USER_CAN_EDIT_CALENDAR, $objCalendars->id)) {
-                $arrCalendars[$objCalendars->id] = $objCalendars->title;
-            }
-        }
-
-        return $arrCalendars;
-    }
-}
