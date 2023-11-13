@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.2.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.1...v1.2.2) (2023-11-13)
+
+
+### Bug Fixes
+
+* fix ecs and rector errors ([4932aa4](https://github.com/cgoIT/contao-cmace-bundle/commit/4932aa42199e022847d740d8915c2b9b8f173e9c))
+* fix ecs and rector errors ([a2b6a06](https://github.com/cgoIT/contao-cmace-bundle/commit/a2b6a06808c79dee01836934a411841b8b7e63b4))
+* fix ecs and rector errors ([3321d24](https://github.com/cgoIT/contao-cmace-bundle/commit/3321d2455e13e9d3c544cd0868f67ecbf5d2da55))
+* fix ecs and rector errors ([257ee33](https://github.com/cgoIT/contao-cmace-bundle/commit/257ee33a0f1d59100007b9b7fb7eda634ffed0ad))
+* fix setup with new project structure after refactoring ([fc5f124](https://github.com/cgoIT/contao-cmace-bundle/commit/fc5f1248f70d25d963036944ff1011215f77b823))
+
 ## [1.2.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.0...v1.2.1) (2023-11-07)
 
 
