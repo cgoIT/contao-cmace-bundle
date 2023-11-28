@@ -11,6 +11,9 @@ declare(strict_types=1);
  */
 
 use Contao\Controller;
+use Contao\System;
+
+System::loadLanguageFile('tl_module');
 
 $GLOBALS['TL_DCA']['tl_content']['palettes']['eventlist_fixed_range'] = '{type_legend},type,headline;{cmace_legend},text,cal_calendar,cal_noSpan,cal_featured,cal_order,cal_readerModule,cal_limit,perPage,cal_hideRunning,cmaceEventsHeadline,cmaceEventsFrom,cmaceEventsUntil;{template_legend:hide},cal_template,customTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID';
 
@@ -59,7 +62,6 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_readerModule'],
         'exclude' => true,
         'inputType' => 'select',
-        'options_callback' => ['tl_module_calendar', 'getReaderModules'],
         'reference' => &$GLOBALS['TL_LANG']['tl_module'],
         'eval' => ['includeBlankOption' => true, 'tl_class' => 'w50'],
         'sql' => 'int(10) unsigned NOT NULL default 0',
