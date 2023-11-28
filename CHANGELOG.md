@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.2...v1.3.0) (2023-11-28)
+
+
+### Features
+
+* compatibility with contao 5 ([e49a50b](https://github.com/cgoIT/contao-cmace-bundle/commit/e49a50b6caff574d776619f00d66757a55c116d7))
+
 ## [1.2.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.1...v1.2.2) (2023-11-13)
 
 
