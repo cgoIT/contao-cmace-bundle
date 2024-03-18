@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.0...v1.3.1) (2024-03-18)
+
+
+### Bug Fixes
+
+* fix error on news copy when fixed range element is used ([d7397b4](https://github.com/cgoIT/contao-cmace-bundle/commit/d7397b4c939fb5cdc23cfc6c50d9eb275b237ab3))
+
+
+### Miscellaneous Chores
+
+* fix ecs errors ([fdce397](https://github.com/cgoIT/contao-cmace-bundle/commit/fdce3976b91bb5c0cee22ca59aa1d7f2f8803c19))
+
 ## [1.3.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.2.2...v1.3.0) (2023-11-28)
 
 
