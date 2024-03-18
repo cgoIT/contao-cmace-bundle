@@ -51,7 +51,10 @@ trait FixedTimeRangeContentAndModuleTrait
     protected function getDatesFromFormat(Date $objDate, $strFormat): array
     {
         $intStart = $this->cmaceEventsFrom;
-        $intEnd = \DateTime::createFromFormat('Y-m-d H:i:s', (new \DateTime())->setTimestamp($this->cmaceEventsUntil)->format('Y-m-d 23:59:59'))->getTimestamp();
+        $intEnd = $this->cmaceEventsUntil;
+        if (!empty($this->cmaceEventsUntil)) {
+            $intEnd = \DateTime::createFromFormat('Y-m-d H:i:s', (new \DateTime())->setTimestamp($this->cmaceEventsUntil)->format('Y-m-d 23:59:59'))->getTimestamp();
+        }
 
         return [$intStart, $intEnd, $GLOBALS['TL_LANG']['MSC']['cal_empty']];
     }
