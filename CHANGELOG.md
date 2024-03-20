@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.1...v1.3.2) (2024-03-20)
+
+
+### Bug Fixes
+
+* fix minor bug for contao 5 ([97c7473](https://github.com/cgoIT/contao-cmace-bundle/commit/97c7473702010e0651f7b895c2775d6fa3a8807d))
+
 ## [1.3.1](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.0...v1.3.1) (2024-03-18)
 
 
