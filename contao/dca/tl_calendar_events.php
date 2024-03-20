@@ -35,5 +35,5 @@ $GLOBALS['TL_DCA']['tl_calendar_events']['fields'] = array_merge(
         'eval' => ['mandatory' => false, 'tl_class' => 'clr w50'],
         'sql' => 'int(10) unsigned NOT NULL default 0',
     ]],
-    $GLOBALS['TL_DCA']['tl_calendar_events']['fields'],
+    $GLOBALS['TL_DCA']['tl_calendar_events']['fields'] ?? [],
 );
