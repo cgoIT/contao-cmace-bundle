@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.3](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.2...v1.3.3) (2024-03-22)
+
+
+### Miscellaneous Chores
+
+* compatibility with php 8.3 ([9313aa5](https://github.com/cgoIT/contao-cmace-bundle/commit/9313aa5009bd70dc1615289010c9280d11d65742))
+
 ## [1.3.2](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.1...v1.3.2) (2024-03-20)
 
 
