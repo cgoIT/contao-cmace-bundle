@@ -1,4 +1,4 @@
-# Contao 4 Calendar Modules and Content Elements (CMACE) Bundle
+# Contao 4 and 5 Calendar Modules and Content Elements (CMACE) Bundle
 
 [![](https://img.shields.io/packagist/v/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
 [![](https://img.shields.io/packagist/dt/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
