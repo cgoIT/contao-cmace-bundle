@@ -1,6 +1,7 @@
 # Contao 4 and 5 Calendar Modules and Content Elements (CMACE) Bundle
 
 [![](https://img.shields.io/packagist/v/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
+![Dynamic JSON Badge](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2FcgoIT%2Fcontao-cmace-bundle%2Fmain%2Fcomposer.json&query=%24.require%5B%22contao%2Fcore-bundle%22%5D&label=Contao%20Version)
 [![](https://img.shields.io/packagist/dt/cgoit/contao-cmace-bundle.svg)](https://packagist.org/packages/cgoit/contao-cmace-bundle)
 [![CI](https://github.com/cgoIT/contao-cmace-bundle/actions/workflows/ci.yml/badge.svg)](https://github.com/cgoIT/contao-cmace-bundle/actions/workflows/ci.yml)
 
