@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'inputUnit',
         'options' => ['h3', 'h4', 'h5', 'h6'],
         'eval' => ['maxlength' => 200, 'tl_class' => 'w50 clr'],
-        'sql' => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
+        'sql' => "text NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
     ]],
     ['cal_calendar' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_calendar'],
@@ -40,14 +40,14 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'inputType' => 'checkbox',
         'eval' => ['tl_class' => 'clr w50'],
-        'sql' => "char(1) COLLATE ascii_bin NOT NULL default ''",
+        'sql' => "char(1) NOT NULL default ''",
     ]],
     ['cal_hideRunning' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_hideRunning'],
         'exclude' => true,
         'inputType' => 'checkbox',
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "char(1) COLLATE ascii_bin NOT NULL default ''",
+        'sql' => "char(1) NOT NULL default ''",
     ]],
     ['cal_order' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_order'],
@@ -56,7 +56,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'options' => ['ascending', 'descending'],
         'reference' => &$GLOBALS['TL_LANG']['MSC'],
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "varchar(16) COLLATE ascii_bin NOT NULL default 'ascending'",
+        'sql' => "varchar(16) NOT NULL default 'ascending'",
     ]],
     ['cal_readerModule' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_readerModule'],
@@ -86,7 +86,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'select',
         'options_callback' => static fn () => Controller::getTemplateGroup('event_'),
         'eval' => ['includeBlankOption' => true, 'chosen' => true, 'tl_class' => 'w50'],
-        'sql' => "varchar(64) COLLATE ascii_bin NOT NULL default ''",
+        'sql' => "varchar(256) NOT NULL default ''",
     ]],
     ['cal_featured' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_featured'],
@@ -95,7 +95,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'options' => ['all_items', 'featured', 'unfeatured'],
         'reference' => &$GLOBALS['TL_LANG']['tl_module']['events'],
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "varchar(16) COLLATE ascii_bin NOT NULL default 'all_items'",
+        'sql' => "varchar(16) NOT NULL default 'all_items'",
     ]],
     ['cmaceEventsFrom' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cmaceEventsFrom'],

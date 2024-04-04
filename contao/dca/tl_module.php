@@ -19,7 +19,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields'] = array_merge(
         'inputType' => 'textarea',
         'eval' => ['mandatory' => false, 'rte' => 'tinyMCE', 'tl_class' => 'w100'],
         'explanation' => 'insertTags',
-        'sql' => 'mediumtext NULL',
+        'sql' => 'text NULL',
     ]],
     ['cmaceEventsHeadline' => [
         'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceEventsHeadline'],
@@ -28,7 +28,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields'] = array_merge(
         'inputType' => 'inputUnit',
         'options' => ['h3', 'h4', 'h5', 'h6'],
         'eval' => ['maxlength' => 200, 'tl_class' => 'w50 clr'],
-        'sql' => "varchar(255) NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
+        'sql' => "text NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
     ]],
     ['cmaceEventsFrom' => [
         'label' => &$GLOBALS['TL_LANG']['tl_module']['cmaceEventsFrom'],
