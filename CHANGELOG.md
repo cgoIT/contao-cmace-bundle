@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.3.5](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.4...v1.3.5) (2024-05-02)
+
+
+### Miscellaneous Chores
+
+* add shadow dependencies ([d13a7a2](https://github.com/cgoIT/contao-cmace-bundle/commit/d13a7a209e2388a90ce632204f310608d1859900))
+* minor adjustments in composer.json ([547ed91](https://github.com/cgoIT/contao-cmace-bundle/commit/547ed91e1d3289d25e4b905c3bea3bee9a7610d3))
+
 ## [1.3.4](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.3...v1.3.4) (2024-04-04)
 
 
