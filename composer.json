@@ -3,7 +3,7 @@
     "description": "Some new modules and content elements for contao calendars",
     "license": "LGPL-3.0-or-later",
     "type": "contao-bundle",
-    "version": "1.3.4",
+    "version": "1.3.5",
     "authors": [
         {
             "name": "Carsten Götzinger",
