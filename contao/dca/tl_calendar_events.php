@@ -33,7 +33,7 @@ $GLOBALS['TL_DCA']['tl_calendar_events']['fields'] = array_merge(
         'search' => false,
         'relation' => ['type' => 'hasOne', 'load' => 'lazy', 'table' => 'tl_news'],
         'eval' => ['mandatory' => false, 'tl_class' => 'clr w50'],
-        'sql' => 'int(10) unsigned NOT NULL default 0',
+        'sql' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'default' => 0],
     ]],
     $GLOBALS['TL_DCA']['tl_calendar_events']['fields'] ?? [],
 );

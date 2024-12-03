@@ -25,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'inputUnit',
         'options' => ['h3', 'h4', 'h5', 'h6'],
         'eval' => ['maxlength' => 200, 'tl_class' => 'w50 clr'],
-        'sql' => "text NOT NULL default 'a:2:{s:5:\"value\";s:0:\"\";s:4:\"unit\";s:2:\"h3\";}'",
+        'sql' => ['type' => 'text', 'length' => 1000, 'default' => 'a:2:{s:5:"value";s:0:"";s:4:"unit";s:2:"h3";}'],
     ]],
     ['cal_calendar' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_calendar'],
@@ -33,21 +33,21 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'search' => true,
         'inputType' => 'checkbox',
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'w100'],
-        'sql' => 'blob NULL',
+        'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
     ]],
     ['cal_noSpan' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_noSpan'],
         'exclude' => true,
         'inputType' => 'checkbox',
         'eval' => ['tl_class' => 'clr w50'],
-        'sql' => "char(1) NOT NULL default ''",
+        'sql' => ['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => ''],
     ]],
     ['cal_hideRunning' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_hideRunning'],
         'exclude' => true,
         'inputType' => 'checkbox',
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "char(1) NOT NULL default ''",
+        'sql' => ['type' => 'string', 'length' => 1, 'fixed' => true, 'default' => ''],
     ]],
     ['cal_order' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_order'],
@@ -56,7 +56,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'options' => ['ascending', 'descending'],
         'reference' => &$GLOBALS['TL_LANG']['MSC'],
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "varchar(16) NOT NULL default 'ascending'",
+        'sql' => ['type' => 'string', 'length' => 16, 'default' => 'ascending'],
     ]],
     ['cal_readerModule' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_readerModule'],
@@ -64,21 +64,21 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'select',
         'reference' => &$GLOBALS['TL_LANG']['tl_module'],
         'eval' => ['includeBlankOption' => true, 'tl_class' => 'w50'],
-        'sql' => 'int(10) unsigned NOT NULL default 0',
+        'sql' => ['type' => 'integer', 'length' => 10, 'unsigned' => true, 'default' => 0],
     ]],
     ['cal_limit' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_limit'],
         'exclude' => true,
         'inputType' => 'text',
         'eval' => ['rgxp' => 'natural', 'tl_class' => 'w50'],
-        'sql' => 'smallint(5) unsigned NOT NULL default 0',
+        'sql' => ['type' => 'smallint', 'length' => 5, 'unsigned' => true, 'default' => 0],
     ]],
     ['perPage' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['perPage'],
         'exclude' => true,
         'inputType' => 'text',
         'eval' => ['rgxp' => 'natural', 'tl_class' => 'w50'],
-        'sql' => 'smallint(5) unsigned NOT NULL default 0',
+        'sql' => ['type' => 'smallint', 'length' => 5, 'unsigned' => true, 'default' => 0],
     ]],
     ['cal_template' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_template'],
@@ -86,7 +86,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'select',
         'options_callback' => static fn () => Controller::getTemplateGroup('event_'),
         'eval' => ['includeBlankOption' => true, 'chosen' => true, 'tl_class' => 'w50'],
-        'sql' => "varchar(256) NOT NULL default ''",
+        'sql' => ['type' => 'string', 'length' => 256, 'default' => ''],
     ]],
     ['cal_featured' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cal_featured'],
@@ -95,7 +95,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'options' => ['all_items', 'featured', 'unfeatured'],
         'reference' => &$GLOBALS['TL_LANG']['tl_module']['events'],
         'eval' => ['tl_class' => 'w50'],
-        'sql' => "varchar(16) NOT NULL default 'all_items'",
+        'sql' => ['type' => 'string', 'length' => 16, 'default' => 'all_items'],
     ]],
     ['cmaceEventsFrom' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cmaceEventsFrom'],
@@ -103,7 +103,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'search' => true,
         'inputType' => 'text',
         'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'clr w50'],
-        'sql' => 'bigint(20) NULL',
+        'sql' => ['type' => 'bigint', 'length' => 20, 'notnull' => false],
     ]],
     ['cmaceEventsUntil' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cmaceEventsUntil'],
@@ -111,7 +111,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'search' => true,
         'inputType' => 'text',
         'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'w50'],
-        'sql' => 'bigint(20) NULL',
+        'sql' => ['type' => 'bigint', 'length' => 20, 'notnull' => false],
     ]],
     ['cmaceEvents' => [
         'label' => &$GLOBALS['TL_LANG']['tl_content']['cmaceEvents'],
@@ -120,7 +120,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'inputType' => 'picker',
         'relation' => ['type' => 'hasMany', 'load' => 'lazy', 'table' => 'tl_calendar_events'],
         'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'clr w50'],
-        'sql' => 'blob NULL',
+        'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
     ]],
     $GLOBALS['TL_DCA']['tl_content']['fields'],
 );
