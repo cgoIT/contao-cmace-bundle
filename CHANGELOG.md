@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.6](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.5...v1.3.6) (2024-12-03)
+
+
+### Bug Fixes
+
+* use Doctrine Schema Representation for db columns ([b8edc24](https://github.com/cgoIT/contao-cmace-bundle/commit/b8edc24cf374ad0a4c366d8a3a06e1c4b99f7bcf))
+
 ## [1.3.5](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.4...v1.3.5) (2024-05-02)
 
 
