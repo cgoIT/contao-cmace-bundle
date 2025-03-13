@@ -20,20 +20,20 @@ use Contao\StringUtil;
 use Contao\System;
 
 /**
- * @property bool        $cal_noSpan
- * @property string      $cal_template
- * @property int         $cal_limit
- * @property string      $cal_order
- * @property array       $cal_calendar
- * @property int         $cal_readerModule
- * @property bool        $cal_hideRunning
- * @property string      $cal_featured
- * @property string|null $text
- * @property string|null $cmaceEventsHeadline
- * @property int         $cmaceEventsFrom
- * @property int         $cmaceEventsUntil
- * @property array       $hl
- * @property bool        $invisible
+ * @property bool         $cal_noSpan
+ * @property string       $cal_template
+ * @property int          $cal_limit
+ * @property string       $cal_order
+ * @property array<mixed> $cal_calendar
+ * @property int          $cal_readerModule
+ * @property bool         $cal_hideRunning
+ * @property string       $cal_featured
+ * @property string|null  $text
+ * @property string|null  $cmaceEventsHeadline
+ * @property int          $cmaceEventsFrom
+ * @property int          $cmaceEventsUntil
+ * @property array<mixed> $hl
+ * @property bool         $invisible
  */
 class CEEventlistFixedRange extends ModuleEventlist
 {

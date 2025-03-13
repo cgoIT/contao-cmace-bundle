@@ -26,7 +26,6 @@
     },
     "require-dev": {
         "contao/manager-plugin": "^2.0",
-        "phpunit/phpunit": "^10.3",
         "terminal42/contao-build-tools": "dev-main"
     },
     "conflict": {
@@ -35,11 +34,6 @@
     "autoload": {
         "psr-4": {
             "Cgoit\\CmaceBundle\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "Cgoit\\CmaceBundle\\Tests\\": "tests/"
         }
     },
     "config": {
@@ -55,12 +49,10 @@
     },
     "scripts": {
         "all": [
-            "@unit-tests",
             "@cs-fixer",
             "@rector",
             "@phpstan",
             "@depcheck"
-        ],
-        "unit-tests": "@php vendor/bin/phpunit --colors=always"
+        ]
     }
 }
