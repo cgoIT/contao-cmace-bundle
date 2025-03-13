@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.8](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.7...v1.3.8) (2025-03-13)
+
+
+### Miscellaneous Chores
+
+* fix build-tools errors ([dbbbdc1](https://github.com/cgoIT/contao-cmace-bundle/commit/dbbbdc19219ab65b2f254afb62b2fa75913fc7df))
+
 ## [1.3.7](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.6...v1.3.7) (2025-02-11)
 
 
