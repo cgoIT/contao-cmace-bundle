@@ -32,7 +32,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'checkbox',
-        'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'w100'],
+        'eval' => ['mandatory' => true, 'multiple' => true, 'tl_class' => 'w100'],
         'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
     ]],
     ['cal_noSpan' => [
@@ -102,7 +102,7 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'text',
-        'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'clr w50'],
+        'eval' => ['rgxp' => 'date', 'mandatory' => true, 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'clr w50'],
         'sql' => ['type' => 'bigint', 'length' => 20, 'notnull' => false],
     ]],
     ['cmaceEventsUntil' => [
@@ -110,17 +110,8 @@ $GLOBALS['TL_DCA']['tl_content']['fields'] = array_merge(
         'exclude' => true,
         'search' => true,
         'inputType' => 'text',
-        'eval' => ['rgxp' => 'date', 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'w50'],
+        'eval' => ['rgxp' => 'date', 'mandatory' => true, 'doNotCopy' => true, 'datepicker' => true, 'tl_class' => 'w50'],
         'sql' => ['type' => 'bigint', 'length' => 20, 'notnull' => false],
-    ]],
-    ['cmaceEvents' => [
-        'label' => &$GLOBALS['TL_LANG']['tl_content']['cmaceEvents'],
-        'exclude' => true,
-        'search' => true,
-        'inputType' => 'picker',
-        'relation' => ['type' => 'hasMany', 'load' => 'lazy', 'table' => 'tl_calendar_events'],
-        'eval' => ['mandatory' => false, 'multiple' => true, 'tl_class' => 'clr w50'],
-        'sql' => ['type' => 'blob', 'length' => 65535, 'notnull' => false],
     ]],
     $GLOBALS['TL_DCA']['tl_content']['fields'],
 );

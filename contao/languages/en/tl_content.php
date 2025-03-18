@@ -30,6 +30,3 @@ $GLOBALS['TL_LANG']['tl_content']['cmaceEventsFrom']['1'] = 'Select a date from 
 
 $GLOBALS['TL_LANG']['tl_content']['cmaceEventsUntil']['0'] = 'Show events until';
 $GLOBALS['TL_LANG']['tl_content']['cmaceEventsUntil']['1'] = 'Select a date up to which the events are to be listed in the frontend';
-
-$GLOBALS['TL_LANG']['tl_content']['cmaceEvents']['0'] = 'individual events';
-$GLOBALS['TL_LANG']['tl_content']['cmaceEvents']['1'] = 'Selection of one or more events to be listed in the frontend';
