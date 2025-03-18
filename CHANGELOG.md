@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.9](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.8...v1.3.9) (2025-03-18)
+
+
+### Bug Fixes
+
+* remove unused column cmaceEvents ([c33f9dd](https://github.com/cgoIT/contao-cmace-bundle/commit/c33f9dd5fa7a04e84ce326ae066e9048e54c20f9))
+
 ## [1.3.8](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.7...v1.3.8) (2025-03-13)
 
 
