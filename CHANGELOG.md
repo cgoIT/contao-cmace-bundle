@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.10](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.9...v1.3.10) (2025-08-19)
+
+
+### Miscellaneous Chores
+
+* update version contraints ([799488a](https://github.com/cgoIT/contao-cmace-bundle/commit/799488ae86a3ee3375e134c3debe7e48c9a63007))
+
 ## [1.3.9](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.8...v1.3.9) (2025-03-18)
 
 
