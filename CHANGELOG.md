@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.11](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.10...v1.3.11) (2026-03-27)
+
+
+### Miscellaneous Chores
+
+* update copyright header ([ef61504](https://github.com/cgoIT/contao-cmace-bundle/commit/ef61504895f747a645e1d00a55de5e43e345997f))
+
 ## [1.3.10](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.9...v1.3.10) (2025-08-19)
 
 
