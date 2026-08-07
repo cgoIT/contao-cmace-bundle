@@ -41,6 +41,9 @@ trait FixedTimeRangeContentAndModuleTrait
             $this->Template->entriesHl = $arrEventsHeadline['unit'];
             $this->Template->entriesHeadline = $arrEventsHeadline['value'];
         }
+
+        $this->Template->rangeStart = (new \DateTimeImmutable())->setTimestamp($this->cmaceEventsFrom);
+        $this->Template->rangeEnd = (new \DateTimeImmutable())->setTimestamp($this->cmaceEventsUntil);
     }
 
     /**
