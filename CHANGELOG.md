@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.12...v1.4.0) (2026-08-07)
+
+
+### Features
+
+* add rangeFrom and rangeTo to template ([15e6069](https://github.com/cgoIT/contao-cmace-bundle/commit/15e6069d8734605a7966edb5b71b110dabc95ae7))
+
 ## [1.3.12](https://github.com/cgoIT/contao-cmace-bundle/compare/v1.3.11...v1.3.12) (2026-03-27)
 
 
